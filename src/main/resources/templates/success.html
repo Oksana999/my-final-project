@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: header"></div>
+<div class = "container - xl">
+    <h1 class="centered" th:text="${'Congratulate '+user.username+'! your trip has been paid'}"></h1>
+
+
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

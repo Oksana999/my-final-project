@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+<body>
+<div class = "container - xl">
+
+    <h1>Hotels:</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Hotels</th>
+        </tr>
+        </thead>
+        <tr th:each="hotel : ${hotels}">
+            <td><a th:text="${hotel.name}" th:href="'/hotels/display?hotelId=' + ${hotel.id}"></a></td>
+        </tr>
+
+    </table>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

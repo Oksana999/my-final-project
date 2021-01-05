@@ -1,0 +1,300 @@
+
+.body-content {
+    margin-top: 72px;
+}
+
+td, th {
+    padding: 10px;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    vertical-align: top;
+}
+
+tr:nth-child(odd) {
+    background-color: #e4e4e4;
+}
+
+.centeredTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.job-listing {
+    margin: 30px auto;
+    border: 1px solid #e4e4e4;
+    width: 80%;
+}
+
+table.job-listing td:first-child {
+    font-weight: bold;
+}
+
+table.job-listing td:last-child {
+    width: 80%;
+}
+
+label {
+    margin-right: 15px;
+}
+
+.centered {
+    text-align: center;
+}
+
+p {
+    vertical-align: top;
+    margin-left: 30px;
+}
+
+.centeredTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.job-listing {
+    border: 1px solid #e4e4e4;
+    width: 80%;
+    background-color: #e4e4e4;
+}
+
+.form-control {
+    width: 90%;
+}
+
+.mr-2 {
+    width: 70%;
+    height: 95%;
+    margin-top: 15px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: x-large;
+}
+
+.container_title {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: xx-large;
+    font-style: italic;
+
+}
+
+.nav-link active {
+    padding-right: 750px;
+    color: white;
+    font-size: x-large;
+}
+
+.nav-link {
+    padding-right: 350px;
+    color: white;
+    font-size: x-large;
+}
+
+body {
+    background-image: url("https://image.freepik.com/free-photo/maldives-island_74190-477.jpg");
+    background-size: cover;
+    background-color: #cfbab8;
+}
+
+.navbar {
+    padding-bottom: revert;
+    padding-top: revert;
+    border: 1px solid #0d6efd;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav mr-auto mb-2 mb-lg-0 {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.d-flex {
+    padding-left: 300px;
+
+}
+
+h1 {
+    color: white;
+    margin-right: 15%;
+}
+
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.container-fluid {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+label {
+    font-size: 16px;
+    color: navy;
+}
+
+.table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+    background-color: #6995c2;
+    font-size: x-large;
+}
+
+.table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 12px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #45688c;
+    background-color: white;
+}
+
+.table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    background-color: white;
+
+}
+
+section {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+img {
+
+    width: 750px;
+    height: 390px;
+    border: #0d6efd 1px;
+    border-radius: 25px;
+
+}
+
+.list-hotels {
+    width: 650px;
+    height: 390px;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    height: 350px;
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+
+    padding-top: 35px;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 8%;
+}
+
+.active {
+    background-color: transparent !important;
+}
+.list{
+    padding-left: 450px;
+}
+.carousel-inner {
+    padding: 50px;
+
+}
+.centered{
+    font-weight: bold;
+    text-decoration: blue;
+   text-decoration: underline;
+    text-align: center;
+    padding-right: 200px;
+}
+.img-big{
+    /*width: 1295px;*/
+    /*height: 650px;*/
+    width: 1100px;
+    height: 450px;
+    padding-top: 30px;
+    border: #0d6efd 2px;
+    border-radius: 12px;
+}
+.navbar-expand-lg .navbar-nav {
+    padding-left: 200px;
+}
+.container-xxl1 {
+    max-width: 1000px;
+}
+.container-xxl {
+    max-width: 1320px;
+}
+.form-group{
+    margin-top: 20px;
+}
+[type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled), button:not(:disabled) {
+
+    margin-top: 15px;
+}
+.carousel-control-prev-icon{
+    /*background-image: url("https://www.vhv.rs/dpng/d/186-1863841_left-arrow-key-left-arrow-keyboard-icon-hd.png");*/
+    background-image: url("/photos/arrowleft.png");
+}
+.carousel-control-next-icon{
+    /*background-image: url("https://www.seekpng.com/png/small/12-124657_download-arrow-icon-png-banner-freeuse-stock-next.png");*/
+    background-image: url("/photos/arrowright.PNG");
+}
+
+.has-error {
+    color: red;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1120px;
+}
+.container-xxl{
+    max-width: 1800px;
+}
+.btn-outline-success {
+    color: blue;
+    border-color: aquamarine;
+}
+.site-title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 89%;
+}
+#showAccount {
+    height: 39px;
+    width: 290px;
+    font-size: 18px;
+}
+#replenishmentButton {
+    height: 39px;
+    width: 290px;
+    font-size: 18px;
+}
+/*.navbar navbar-expand-lg navbar-light bg-light {*/
+/*    background-color: #0d6efd !important;*/
+/*}*/
+header {
+    border: solid 1px #007bff;
+}
+

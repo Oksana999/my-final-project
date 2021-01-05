@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: header"></div>
+<div class="container-xxl">
+
+    <div class="row">
+        <h3 style="text-align: center; margin: 25px 0"
+            th:text="${session.get('user').getUsername()}+' welcome to your personal account'"></h3>
+    </div>
+    <div class="row">
+
+        <div class="offset-2 col-3">
+
+            <!--                  Button "Show Accounts" -->
+
+            <input type="button" value="Show account " id="showAccount"/>
+            <p class="has-error" th:text="${message}"></p>
+            <div class="showAccount" style="display:none">
+                <h5 th:text="${'Balance on your account: $'+account.amount}"></h5>
+            </div>
+
+            <br><br>
+
+            <!--     Button "Add Money to Your Account" -->
+            <input type="button" value="Add Money to Your Account " id="replenishmentButton"/>
+            <div class="replenishment" style="display:none">
+                <br>
+                <form class="sendForm"
+                      method="post" th:action="@{accounts/replenishment}">
+                    <br>
+                    <lable>Amount:</lable>
+                    <input type="hidden" name="accountId" th:value="${account.id}">
+                    <input type="text" name="amount">
+                    <input type="submit" name="submit">
+                </form>
+
+            </div>
+
+            <br><br><br>
+
+
+        </div>
+        <div class="col-4" style="background-color: #b9baae">
+
+            <h4 class="centered">Transactions</h4>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Transaction</th>
+                    <th>Amount</th>
+                </tr>
+                </thead>
+                <tr th:each="transaction : ${transactions}">
+                    <td th:text="${#dates.format(transaction.date, 'dd-MMM-yyyy')}"></td>
+                    <td th:text="${transaction.isWithdraw()} ? 'Payment for hotel':'Adding money to account'"></td>
+                    <td th:text="${transaction.amount}"></td>
+                </tr>
+            </table>
+
+        </div>
+
+
+    </div>
+</div>
+
+<div th:replace="fragments :: footer"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    $('#showAccount').click(function () {
+        $('.showAccount').toggle();
+    });
+    $(document).ready(function () {
+
+
+        $('#replenishmentButton').click(function () {
+            $('.replenishment').toggle();
+        });
+        $('#withdrawButton').click(function () {
+            $('.withdraw').toggle();
+        });
+    });
+</script>
+</body>
+</html>
+

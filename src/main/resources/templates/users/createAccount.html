@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head th:replace="fragments :: head"></head>
+</head>
+<body>
+<div th:replace="fragments :: header"></div>
+<div class = "container - xl">
+
+    <h1>Create Account</h1>
+
+    <form method="post" th:action="@{accounts/createAccount}">
+        <div class="form-group">
+            <label>Amount
+                <input th:field="${account.amount}" class="form-control">
+            </label>
+            <span th:errors="${account.amount}" class="error"></span>
+        </div>
+
+        <input type="submit" value="Create" class="btn btn-primary">
+    </form>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

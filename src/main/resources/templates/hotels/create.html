@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head th:replace="fragments :: head"></head>
+</head>
+<body>
+<div th:replace="fragments :: header"></div>
+<div class = "container - xl">
+
+    <h1>Hotels:</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label>Name
+            <input th:field="${hotel.name}" class="form-control">
+        </label>
+        <span th:errors="${hotel.name}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label>Description
+            <input th:field="${hotel.description}" class="form-control">
+        </label>
+        <span th:errors="${hotel.description}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label>Category
+            <select th:field="${hotel.country}">
+                <option th:each="country : ${countries}"
+                        th:value="${country.id}"
+                        th:text="${country.name}"
+                ></option>
+            </select>
+            <p class="error" th:errors="${hotel.country}"></p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Photo
+            <input th:field="${hotel.photo}" class="form-control">
+        </label>
+<!--        <span th:errors="${hotel.photo}" class="error"></span>-->
+    </div>
+    <div class="form-group">
+        <label>City
+            <input th:field="${hotel.city}" class="form-control">
+        </label>
+        <span th:errors="${hotel.city}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label>Price
+            <input th:field="${hotel.price}" class="form-control">
+        </label>
+        <span th:errors="${hotel.price}" class="error"></span>
+    </div>
+    <input type="submit" value="Create" class="btn btn-primary">
+</form>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

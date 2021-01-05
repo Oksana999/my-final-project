@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: header"></div>
+    <div class = "container - xxl">
+
+        <h1 th:text="${user.username}"></h1>
+
+        <form method="post">
+            <div class="form-group">
+                <label>Add Role:
+                    <select th:field="${user.role}">
+                        <option th:each="role : ${roles}"
+                                th:value="${role}"
+                                th:text="${role}"
+                        ></option>
+                    </select>
+                    <p class="error" th:errors="${user.role}"></p>
+                </label>
+            </div>
+            <input type="submit" value="Create" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

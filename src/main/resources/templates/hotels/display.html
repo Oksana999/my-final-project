@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: header"></div>
+
+<div class="container - xxl1">
+
+    <img class="img-big" th:src="${hotel.photo}"/>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Description</th>
+            <td th:text="${hotel.description}"></td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td><a th:text="${hotel.country.name}" th:href="'/countries/display?countryId=' +${hotel.country.id}"></a>
+            </td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td th:text="${hotel.city}"></td>
+            <input type="hidden" id="hotelCity" th:value="${hotel.city}"/>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td th:text="'$'+${hotel.price}"></td>
+        </tr>
+
+        <tr>
+            <th>Temperature</th>
+            <td th:text="${temp}+' F'"></td>
+        </tr>
+        <tr>
+            <td>
+                <div id="weather">
+                </div>
+            </td>
+            <td>
+
+                <!--       <button  class="btn btn-primary">-->
+                <!--           <a th:text="${hotel.name}" th:href="'/users/profile?price=' + ${hotel.price}"></a>-->
+                <!--           Pay for Hotel</button>-->
+                <form method="post" th:action="'/accounts/withdrawMoney/' + ${hotel.id}">
+                    <select th:name="nights">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <input value="Pay for Hotel" type="submit" class="btn btn-primary">
+
+                </form>
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+<div th:replace="fragments :: footer"></div>
+<script th:src="@{/js/jquery-3.5.1.min.js}"></script>
+
+<script>
+    var val = $("#hotelCity").val();
+
+    $.get("http://localhost:8080/weather?city=" + val).done(function (fragment) { // get from controller
+        document.getElementById("weather").innerHTML = fragment; // update snippet of page
+    });
+</script>
+</body>
+</html>

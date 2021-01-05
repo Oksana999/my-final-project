@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: header"></div>
+<div class = "container - xxl">
+
+<!--<header th:replace="fragments :: header"></header>-->
+
+    <div>
+            <h1>Add role to the user</h1>
+            <br>
+          <span th:each="user:${users}">
+              <a th:type="button" th:text="'User '+${user.username}+' add role '" th:href="${'/users/addrole?userId='+user.id}"></a><br>
+          </span>
+    </div>
+    <div>
+        <h1>Add hotel</h1>
+        <a th:type="button" th:text="'Create New Hotel'" th:href="${'/hotels/create'}"></a><br>
+    </div>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

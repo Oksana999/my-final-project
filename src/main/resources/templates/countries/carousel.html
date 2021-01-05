@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head th:replace="fragments :: head">
+<!--        <script type="text/javascript" th:src="@{/js/carousel.js}" src="js/carousel.js"></script>-->
+    </head>
+
+
+<body>
+<div th:replace="fragments :: header"></div>
+
+
+<!-- Контейнер слайд-шоу -->
+<div class="slideshow-container">
+
+    <span th:each="hotel : ${hotels}">
+
+
+    <!-- Полноразмерные изображения с числом и текстом подписи -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img th:src="@{${hotel.photo}}" style="width:100%">
+        <div class="text">Подпись текст</div>
+    </div>
+
+        </span>
+
+    <!-- Вперед и назад кнопки -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- Точки/круги -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<div th:replace="fragments :: footer"></div>
+
+</body>
+</html>

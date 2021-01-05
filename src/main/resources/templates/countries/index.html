@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: header"></div>
+<!--<nav th:replace="fragments :: navigation"></nav>-->
+<div class = "container - xl">
+
+    <h1>Countries:</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Countries</th>
+        </tr>
+        </thead>
+        <tr th:each="country:${countries}">
+            <td><a th:text="${country.name}" th:href="'/countries/display?countryId=' + ${country.id}"></a></td>
+        </tr>
+
+    </table>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

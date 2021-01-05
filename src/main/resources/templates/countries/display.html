@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body>
+<div th:replace="fragments :: header"></div>
+<section class="list">
+    <div class="container-xl">
+        <div class="row align-items-center">
+            <div class="col-8">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Country:</th>
+                        <td th:text="${country.name}"></td>
+                    </tr>
+                    <tr>
+                        <th>Hotels</th>
+                        <td>
+                            <ul>
+                                <li th:each="hotel : ${hotels}">
+                                    <a th:href="@{'/hotels/display?hotelId=' + ${hotel.id}}"
+                                       th:text="${hotel.name}"></a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+
+    <div class="container-xl">
+        <h1 class="centered" th:text="'Hotels in '+${country.name}"></h1>
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div th:each="hotel, iterstat : ${hotels}"
+                     th:class="${iterstat.index} == 0  ? 'carousel-item active':'carousel-item'">
+                    <div class="row">
+                        <div class="offset-md-1 col-10">
+                            <div class="card">
+                                <img th:src="${hotel.photo}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${hotel.name}"></h5>
+                                    <p class="card-text" th:text="${hotel.description}"></p>
+                                    <a th:text="${hotel.name}" th:href="'/hotels/display?hotelId=' + ${hotel.id}" class="btn btn-primary">See Hotel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>
+
+
+

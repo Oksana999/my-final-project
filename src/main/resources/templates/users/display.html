@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: header"></div>
+<div class = "container - xxl">
+
+<!--<header th:replace="fragments :: header"></header>-->
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <td th:text="${user.id}"></td>
+    </tr>
+    <tr>
+        <th>UserName</th>
+        <td th:text="${user.username}"></td>
+    </tr>
+    <tr>
+        <th>Contact Email</th>
+        <td th:text="${user.email}"></td>
+    </tr>
+    <tr>
+        <th>Role</th>
+        <td th:text="${user.getRole()}"></td>
+    </tr>
+
+</table>
+
+<a th:href="'/users/addrole?userId=' + ${user.id}">Add Role</a>
+
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: header-login"></div>
+<!--<nav th:replace="fragments :: navigation"></nav>-->
+<div class = "container-xxl">
+
+<!--<form action="/login" method="post">-->
+<!--    <div class="form-group">-->
+<!--        <p class="has-error" th:errors="${loginFormDTO.username}"></p>-->
+<!--        <label>Username-->
+<!--            <input class="form-control" th:field="${loginFormDTO.username}" />-->
+<!--        </label>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label>Password-->
+<!--            <input class="form-control" th:field="${loginFormDTO.password}" type="password"/>-->
+<!--        </label>-->
+<!--    </div>-->
+
+<!--    <input type="submit" class="btn btn-primary" value="Log In" />-->
+<!--</form>-->
+
+
+
+
+<div>
+
+        <form id="login" action="/login" method="post">
+            <h1 class="big-title">Log In</h1>
+
+            <fieldset id="inputs">
+                <input id="username" type="text" th:field="${loginFormDTO.username}" placeholder="Login" autofocus="" required="">
+                <input id="password" type="password" th:field="${loginFormDTO.password}"  placeholder="Password" required="">
+            </fieldset>
+            <fieldset id="actions">
+                <input type="submit" id="submit" value="Login">
+                <a href="/register">Register</a>
+            </fieldset>
+                <br><br>
+
+        </form>
+
+<!--    <div class="clr"></div>-->
+</div>
+</div>
+
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>
